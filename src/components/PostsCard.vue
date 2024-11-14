@@ -5,6 +5,8 @@ const props = defineProps({
   body: String,
   userId: Number,
 });
+
+const emit  = defineEmits(["newFavorite"])
 </script>
 
 <template>
@@ -12,6 +14,7 @@ const props = defineProps({
     <div class="body-card p-5">
       <h5 class="card-title fw-bold">{{ id }} .- {{ title }}</h5>
       <p>{{ body }}</p>
+      <button class="btn btn-danger" @click="emit('newFavorite', title)">Agregar a favoritos</button>
     </div>
   </div>
 </template>
